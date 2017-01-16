@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#795548</color>
+    <color name="color_primary_dark">#5D4037</color>
+    <color name="color_accent">#795548</color>
+
+    <!-- Greyscales -->
+    <color name="white">#FFFFFF</color>
+    <color name="semi_transparent">#33000000</color>
+
+    <color name="theme_text_white">#FFFFFF</color>
+    <color name="theme_text_primary">#212121</color>
+    <color name="theme_text_secondary">#727272</color>
+    <color name="theme_text_white_sub">#E0E0E0</color>
+</resources>

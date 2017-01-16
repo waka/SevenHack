@@ -1,0 +1,60 @@
+<resources>
+    <!-- common -->
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
+    <!-- navi -->
+    <string name="nav_podcast_list">Podcasts</string>
+    <string name="nav_downloaded_list">Downloaded</string>
+    <string name="nav_manage">Management</string>
+    <string name="nav_manage_license">Open source license</string>
+
+    <!-- actions -->
+    <string name="action_refresh">Refresh RSS</string>
+    <string name="action_remove">Remove podcast</string>
+    <string name="action_play">Play</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_stop">Stop</string>
+    <string name="action_download">Download</string>
+    <string name="action_will_clear">Clear download</string>
+
+    <!-- placeholder -->
+    <string name="search_hint">Search podcast</string>
+
+    <!-- contents -->
+    <string name="no_results">No results.</string>
+    <string name="no_image">No image.</string>
+    <string name="result_add_podcast">Added new podcast.</string>
+    <string name="result_remove_podcast">Removed podcast.</string>
+    <string name="no_downloaded_episode">No downloaded episode.</string>
+    <string name="updated_episodes">Updated for new episodes.</string>
+
+    <!-- errors -->
+    <string name="fetch_podcasts_error">Failed to search podcasts.</string>
+    <string name="fetch_rss_error">Failed to fetch rss of podcast.</string>
+    <string name="podcast_already_exists">This podcast already registered.</string>
+    <string name="remove_podcast_error">Failed to remove podcast.</string>
+
+    <!-- episode -->
+    <string name="episode_description">Description</string>
+    <string name="episode_show_notes">Show notes</string>
+
+    <!-- notifications -->
+    <string name="notification_downloading">Downloading…</string>
+    <string name="notification_downloaded">Downloaded</string>
+    <string name="notification_download_failed">Failed to download</string>
+
+    <!-- dialogs -->
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_no">Cancel</string>
+    <string name="dialog_fetch_rss_progress">Fetching rss of podcast…</string>
+    <string name="dialog_add_podcast_description">Would you like to watch this podcast?</string>
+    <string name="dialog_download">Download</string>
+    <string name="dialog_download_cancel">Cancel download</string>
+    <string name="dialog_download_clear">Clear cache</string>
+    <string name="dialog_play">Play now</string>
+    <string name="dialog_streaming_play">Streaming playback</string>
+    <string name="dialog_streaming_play_description">If you play back after downloading, you can play it even when you are offline.</string>
+    <string name="dialog_remove_podcast">Remove</string>
+    <string name="dialog_remove_podcast_description">Remove this podcast. Is it OK?</string>
+</resources>

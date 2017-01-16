@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">7Hack</string>
+    <string name="app_description" translatable="false">Podcast everywhere.</string>
+    <string name="image_description" translatable="false">No image</string>
+    <string name="player_start_time" translatable="false">00:00</string>
+    <string name="license_subhead" translatable="false">This library uses the following open source software.</string>
+
+    <!-- transitions -->
+    <string name="transition_podcast" translatable="false">transition_podcast</string>
+    <string name="transition_episode" translatable="false">transition_episode</string>
+</resources>

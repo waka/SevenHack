@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_podcast_list"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/nav_podcast_list" />
+        <item
+            android:id="@+id/nav_downloaded_list"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/nav_downloaded_list" />
+    </group>
+
+    <item android:title="@string/nav_manage">
+        <menu>
+            <item
+                android:id="@+id/nav_manage_license"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="@string/nav_manage_license" />
+        </menu>
+    </item>
+
+</menu>
