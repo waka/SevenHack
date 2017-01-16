@@ -61,6 +61,8 @@ android {
                 keyPassword project.ext.releaseKeyPassword
             }
         }
+    } else {
+        signingConfigs { debug {} }
     }
 
     buildTypes {
