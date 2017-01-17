@@ -38,6 +38,17 @@
                 android:textColor="@color/theme_text_secondary"
                 android:textSize="@dimen/text_small" />
 
+            <TextView
+                android:id="@+id/item_newly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing"
+                android:textColor="@color/theme_text_red_sub"
+                android:textSize="@dimen/text_small"
+                android:text="@string/newly_episode"
+                android:visibility="gone"
+                tools:ignore="RtlHardcoded" />
+
         </LinearLayout>
 
         <TextView

@@ -19,6 +19,7 @@ public class Episode {
     public String lastPlayedAt;
 
     public EnclosureCache enclosureCache;
+    public boolean isNewly = false;
 
     public ContentValues asContentValues() {
         ContentValues values = new ContentValues();

@@ -28,6 +28,7 @@
     <string name="result_remove_podcast">Removed podcast.</string>
     <string name="no_downloaded_episode">No downloaded episode.</string>
     <string name="updated_episodes">Updated for new episodes.</string>
+    <string name="newly_episode">New!</string>
 
     <!-- errors -->
     <string name="fetch_podcasts_error">Failed to search podcasts.</string>

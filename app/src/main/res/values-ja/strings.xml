@@ -41,4 +41,5 @@
     <string name="dialog_fetch_rss_progress">PodcastのRSSを取得中…</string>
     <string name="notification_download_failed">ダウンロード失敗</string>
     <string name="result_remove_podcast">Podcastを削除しました</string>
+    <string name="newly_episode">New!</string>
 </resources>

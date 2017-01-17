@@ -62,7 +62,9 @@ android {
             }
         }
     } else {
-        signingConfigs { debug {} }
+        signingConfigs {
+            debug { return true }
+        }
     }
 
     buildTypes {

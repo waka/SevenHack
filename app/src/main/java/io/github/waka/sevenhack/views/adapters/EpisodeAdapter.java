@@ -127,6 +127,11 @@ public class EpisodeAdapter extends RecyclerView.Adapter<EpisodeAdapter.ViewHold
                 showClear();
             }
 
+            if (episode.isNewly) {
+                TextView tv = (TextView) itemView.findViewById(R.id.item_newly);
+                tv.setVisibility(View.VISIBLE);
+            }
+
             contents.setOnClickListener(view -> listener.onContentsClick(view, episode));
             downloadButton.setOnClickListener(view -> listener.onDownloadClick(view, episode));
             clearButton.setOnClickListener(view -> listener.onClearClick(view, episode));

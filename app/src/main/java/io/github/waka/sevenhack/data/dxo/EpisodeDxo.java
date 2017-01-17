@@ -53,6 +53,7 @@ public class EpisodeDxo {
             episode.link = item.link;
             episode.duration = item.getDuration();
             episode.enclosureUrl = item.enclosure.url;
+            episode.isNewly = true;
 
             episodes.add(episode);
         }

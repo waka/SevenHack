@@ -12,4 +12,5 @@
     <color name="theme_text_primary">#212121</color>
     <color name="theme_text_secondary">#727272</color>
     <color name="theme_text_white_sub">#E0E0E0</color>
+    <color name="theme_text_red_sub">#C62828</color>
 </resources>
