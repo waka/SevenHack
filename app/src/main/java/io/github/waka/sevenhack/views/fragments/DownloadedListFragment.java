@@ -117,7 +117,9 @@ public class DownloadedListFragment extends BaseFragment {
                     if (episodes.size() > 0) {
                         adapter.add(episodes);
                     } else {
-                        SnackbarUtil.show(binding.contentMain, R.string.no_downloaded_episode);
+                        if (adapter.getItemCount() == 0) {
+                            SnackbarUtil.show(binding.contentMain, R.string.no_downloaded_episode);
+                        }
                     }
                 });
     }

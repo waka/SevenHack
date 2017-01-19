@@ -50,7 +50,9 @@
                 android:id="@+id/player_seekbar"
                 android:layout_weight="1"
                 android:layout_width="0dp"
-                android:layout_height="32dp" />
+                android:layout_height="32dp"
+                android:progressDrawable="@drawable/seekbar_progress"
+                android:thumb="@drawable/seekbar_thumb" />
 
             <TextView
                 android:id="@+id/player_duration"
