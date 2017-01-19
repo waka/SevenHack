@@ -44,30 +44,23 @@ android {
         testInstrumentationRunner testInstrumentationRunnerPackageName
     }
 
-    def secretFile = file("${rootDir}/secret/secret.gradle")
-    if (secretFile.exists()) {
-        apply from: secretFile.absolutePath
-        signingConfigs {
-            debug {
-                storeFile rootProject.file("secret/debug.jks")
-                storePassword project.ext.debugStorePassword
-                keyAlias project.ext.debugKeyAlias
-                keyPassword project.ext.debugKeyPassword
-            }
-            release {
-                storeFile rootProject.file("secret/release.jks")
-                storePassword project.ext.releaseStorePassword
-                keyAlias project.ext.releaseKeyAlias
-                keyPassword project.ext.releaseKeyPassword
-            }
+    signingConfigs {
+        debug {
+            storeFile rootProject.file("secret/debug.jks")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
         }
-    } else {
-        signingConfigs {
-            debug {
-                storeFile rootProject.file("secret/debug.jks")
-                storePassword project.ext.debugStorePassword
-                keyAlias project.ext.debugKeyAlias
-                keyPassword project.ext.debugKeyPassword
+
+        def secretFile = file("${rootDir}/secret/release.gradle")
+        if (secretFile.exists()) {
+            apply from: secretFile, to: android
+        } else {
+            release {
+                storeFile debug.storeFile
+                storePassword debug.storePassword
+                keyAlias debug.keyAlias
+                keyPassword debug.keyPassword
             }
         }
     }
