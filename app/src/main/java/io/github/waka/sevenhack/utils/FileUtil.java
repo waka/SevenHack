@@ -32,6 +32,7 @@ public final class FileUtil {
         recursiveDeleteFile(file);
     }
 
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     private static void recursiveDeleteFile(final File file) {
         if (!file.exists()) {
             return;

@@ -48,7 +48,7 @@ public class PodcastPlayerNotification {
         NotificationCompat.MediaStyle style = new NotificationCompat.MediaStyle();
 
         // アプリアイコンをセット
-        builder.setSmallIcon(R.mipmap.ic_launcher)
+        builder.setSmallIcon(R.mipmap.ic_notification)
                 .setContentTitle(episode.title)
                 .setContentText(episode.subTitle)
                 .setProgress(DateUtil.durationToInt(episode.duration), currentPosition, false)

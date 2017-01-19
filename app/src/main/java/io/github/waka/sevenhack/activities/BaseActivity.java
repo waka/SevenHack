@@ -15,7 +15,7 @@ import io.github.waka.sevenhack.internal.di.ActivityModule;
 
 public class BaseActivity extends AppCompatActivity {
 
-    protected static final String BUNDLE_NAME = "extra";
+    static final String BUNDLE_NAME = "extra";
 
     private ActivityComponent activityComponent;
 

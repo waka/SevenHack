@@ -22,7 +22,7 @@ def versionSupportLibrary = '25.0.1'
 // App version
 def versionMajor = 0
 def versionMinor = 9
-def versionPatch = 0
+def versionPatch = 1
 
 def packageName = 'io.github.waka.sevenhack'
 def testInstrumentationRunnerPackageName = 'android.support.test.runner.AndroidJUnitRunner'
@@ -63,7 +63,12 @@ android {
         }
     } else {
         signingConfigs {
-            debug { return true }
+            debug {
+                storeFile rootProject.file("secret/debug.jks")
+                storePassword project.ext.debugStorePassword
+                keyAlias project.ext.debugKeyAlias
+                keyPassword project.ext.debugKeyPassword
+            }
         }
     }
 
@@ -153,15 +158,15 @@ dependencies {
     }
 
     // data
-    compile 'com.squareup.sqlbrite:sqlbrite:0.8.0'
-    compile "org.parceler:parceler-api:1.0.4"
-    annotationProcessor "org.parceler:parceler:1.0.4"
+    compile 'com.squareup.sqlbrite:sqlbrite:1.1.1'
+    compile "org.parceler:parceler-api:1.1.6"
+    annotationProcessor "org.parceler:parceler:1.1.6"
 
     // development
     compile('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
         transitive = true;
     }
-    compile 'com.facebook.stetho:stetho:1.4.1'
+    compile 'com.facebook.stetho:stetho:1.4.2'
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
 

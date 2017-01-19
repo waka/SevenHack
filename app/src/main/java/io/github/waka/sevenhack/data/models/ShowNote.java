@@ -41,7 +41,7 @@ public class ShowNote {
     private static List<ShowNote> backportParseToLinkList(String source) {
         List<ShowNote> linkList = new ArrayList<>();
         Pattern pattern = Pattern.compile(
-                "(http://|https://){1}[\\w\\.\\-/:\\#\\?\\=\\&\\;\\%\\~\\+]+", Pattern.CASE_INSENSITIVE);
+                "(http://|https://)[\\w\\.\\-/:\\#\\?\\=\\&\\;\\%\\~\\+]+", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(source);
 
         while (matcher.find()) {

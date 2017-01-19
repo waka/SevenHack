@@ -104,8 +104,8 @@ public class DownloadedListFragment extends BaseFragment {
     }
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onResume() {
+        super.onResume();
 
         adapter.clear();
         showEpisodes(LIMIT, 0);
