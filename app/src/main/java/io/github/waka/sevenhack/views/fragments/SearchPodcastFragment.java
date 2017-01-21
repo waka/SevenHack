@@ -30,14 +30,14 @@ import io.github.waka.sevenhack.utils.BundleUtil;
 import io.github.waka.sevenhack.utils.DisplayUtil;
 import io.github.waka.sevenhack.utils.SnackbarUtil;
 import io.github.waka.sevenhack.views.adapters.GridItemDecorator;
-import io.github.waka.sevenhack.views.adapters.PodcastAdapter;
+import io.github.waka.sevenhack.views.adapters.SearchPodcastAdapter;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 
 public class SearchPodcastFragment extends BaseFragment {
 
     private FragmentSearchPodcastBinding binding;
-    private PodcastAdapter adapter;
+    private SearchPodcastAdapter adapter;
 
     @Inject
     SearchPodcastLogic searchPodcastLogic;
@@ -74,7 +74,7 @@ public class SearchPodcastFragment extends BaseFragment {
                 new GridItemDecorator(2, DisplayUtil.dpToPx(getActivity()), true));
         binding.podcastList.setItemAnimator(new DefaultItemAnimator());
 
-        adapter = new PodcastAdapter(getActivity(), this::onPodcastClick);
+        adapter = new SearchPodcastAdapter(getActivity(), this::onPodcastClick);
         binding.podcastList.setAdapter(adapter);
     }
 
@@ -121,18 +121,22 @@ public class SearchPodcastFragment extends BaseFragment {
 
                     @Override
                     public void onError(Throwable e) {
-                        hideLoadingView();
-                        SnackbarUtil.show(binding.contentMain, R.string.fetch_podcasts_error);
+                        if (isAdded()) {
+                            hideLoadingView();
+                            SnackbarUtil.show(binding.contentMain, R.string.fetch_podcasts_error);
+                        }
                     }
 
                     @Override
                     public void onNext(List<SearchResult> searchResults) {
-                        hideLoadingView();
+                        if (isAdded()) {
+                            hideLoadingView();
 
-                        if (searchResults.size() == 0) {
-                            SnackbarUtil.show(binding.contentMain, R.string.no_results);
-                        } else {
-                            adapter.setItems(searchResults);
+                            if (searchResults.size() == 0) {
+                                SnackbarUtil.show(binding.contentMain, R.string.no_results);
+                            } else {
+                                adapter.setItems(searchResults);
+                            }
                         }
                     }
                 });
@@ -151,19 +155,22 @@ public class SearchPodcastFragment extends BaseFragment {
                     public void onSubscribe(Disposable d) {}
 
                     @Override
-                    public void onComplete() {
-                        progressDialog.dismiss();
-                    }
+                    public void onComplete() {}
 
                     @Override
                     public void onError(Throwable e) {
-                        progressDialog.dismiss();
-                        SnackbarUtil.show(binding.contentMain, R.string.fetch_rss_error);
+                        if (isAdded()) {
+                            progressDialog.dismiss();
+                            SnackbarUtil.show(binding.contentMain, R.string.fetch_rss_error);
+                        }
                     }
 
                     @Override
                     public void onNext(Rss rss) {
-                        showDialog(searchResult, rss);
+                        if (isAdded()) {
+                            progressDialog.dismiss();
+                            showDialog(searchResult, rss);
+                        }
                     }
                 });
     }

@@ -157,17 +157,21 @@ public class PodcastFragment extends BaseFragment {
 
                     @Override
                     public void onError(Throwable e) {
-                        SnackbarUtil.show(binding.contentMain, R.string.fetch_rss_error);
+                        if (isAdded()) {
+                            SnackbarUtil.show(binding.contentMain, R.string.fetch_rss_error);
+                        }
                     }
 
                     @Override
                     public void onNext(Rss rss) {
-                        List<Episode> episodes = episodeLogic.createOnlyNewers(podcast, rss);
-                        if (episodes.size() > 0) {
-                            Collections.reverse(episodes);
-                            podcast.episodes.addAll(0, episodes);
-                            adapter.addReverse(episodes);
-                            SnackbarUtil.show(binding.contentMain, R.string.updated_episodes);
+                        if (isAdded()) {
+                            List<Episode> episodes = episodeLogic.createOnlyNewers(podcast, rss);
+                            if (episodes.size() > 0) {
+                                Collections.reverse(episodes);
+                                podcast.episodes.addAll(0, episodes);
+                                adapter.addReverse(episodes);
+                                SnackbarUtil.show(binding.contentMain, R.string.updated_episodes);
+                            }
                         }
                     }
                 });

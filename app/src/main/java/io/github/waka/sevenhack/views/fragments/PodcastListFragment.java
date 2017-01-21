@@ -13,12 +13,13 @@ import java.util.Collections;
 
 import javax.inject.Inject;
 
+import io.github.waka.sevenhack.R;
 import io.github.waka.sevenhack.activities.MainActivity;
 import io.github.waka.sevenhack.data.entities.Podcast;
 import io.github.waka.sevenhack.databinding.FragmentPodcastListBinding;
 import io.github.waka.sevenhack.logics.PodcastLogic;
 import io.github.waka.sevenhack.utils.DisplayUtil;
-import io.github.waka.sevenhack.views.adapters.FeedAdapter;
+import io.github.waka.sevenhack.views.adapters.PodcastAdapter;
 import io.github.waka.sevenhack.views.adapters.GridItemDecorator;
 
 public class PodcastListFragment extends BaseFragment {
@@ -27,7 +28,7 @@ public class PodcastListFragment extends BaseFragment {
     PodcastLogic podcastLogic;
 
     private FragmentPodcastListBinding binding;
-    private FeedAdapter adapter;
+    private PodcastAdapter adapter;
 
     public static PodcastListFragment newInstance() {
         PodcastListFragment fragment = new PodcastListFragment();
@@ -61,7 +62,7 @@ public class PodcastListFragment extends BaseFragment {
                 new GridItemDecorator(2, DisplayUtil.dpToPx(getActivity()), true));
         binding.podcastList.setItemAnimator(new DefaultItemAnimator());
 
-        adapter = new FeedAdapter(getActivity(), this::onFeedClick);
+        adapter = new PodcastAdapter(getActivity(), this::onFeedClick);
         binding.podcastList.setAdapter(adapter);
     }
 
@@ -81,7 +82,7 @@ public class PodcastListFragment extends BaseFragment {
     }
 
     private void onFeedClick(View view, Podcast podcast) {
-        ((MainActivity) getActivity()).showPodcast(podcast, view);
+        ((MainActivity) getActivity()).showPodcast(podcast, view.findViewById(R.id.thumbnail));
     }
 
     public void addPodcast(Podcast podcast) {
