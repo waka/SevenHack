@@ -22,7 +22,7 @@ def versionSupportLibrary = '25.0.1'
 // App version
 def versionMajor = 0
 def versionMinor = 9
-def versionPatch = 1
+def versionPatch = 2
 
 def packageName = 'io.github.waka.sevenhack'
 def testInstrumentationRunnerPackageName = 'android.support.test.runner.AndroidJUnitRunner'
